@@ -1,0 +1,36 @@
+#!/bin/bash
+
+echo "< SENDING SIGUSR2 TO $1 >" >&2
+
+if ! kill -0 "$1" > /dev/null 2>&1; then
+    echo "< Process $1 does not even exist! >" >&2
+        sleep 1
+        echo "< WATCHDOG QUIT! >" >&2
+        exit 0
+fi
+
+kill -SIGUSR2 "$1"
+sleep 4
+
+if ! kill -0 "$1" > /dev/null 2>&1; then
+    echo "< Process $1 no longer exists! >" >&2
+        sleep 1
+        echo "< WATCHDOG QUIT! >" >&2
+        exit 0
+fi
+
+echo "< SENDING kill TO $1 >" >&2
+kill $1
+sleep 2
+
+if ! kill -0 "$1" > /dev/null 2>&1; then
+    echo "< Process $1 no longer exists! >" >&2
+        sleep 1
+        echo "< WATCHDOG QUIT! >" >&2
+        exit 0
+fi
+
+echo "< SENDING KILL TO $1 >" >&2
+kill -KILL $1
+sleep 1
+echo "< WATCHDOG QUIT! >" >&2
