@@ -1,5 +1,5 @@
 "Plugin"
 {
-	"file"	"../garrysmod/addons/serverplugin_guarddog"
+	"file"	"../garrysmod/addons/serverplugin_guarddog.dll"
 }
 
