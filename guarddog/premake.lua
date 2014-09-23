@@ -4,9 +4,7 @@ RequireDefaultlibs()
 
 SOLUTION"guarddog"
 	
-	targetdir	"Release"
 	INCLUDES	"source_sdk"
-	defines		{"NDEBUG"}
 	
 	WINDOWS()
 	LINUX()
@@ -14,4 +12,10 @@ SOLUTION"guarddog"
 	PROJECT()
 		SOURCE_SDK_LINKS()
 		configuration 		"windows"
+	        targetprefix    	"serverplugin_"
+			targetsuffix    	""
+			targetextension 	".dll"
 		configuration 		"linux"
+	        targetprefix    	"serverplugin_"
+			targetsuffix    	""
+			targetextension 	".so"
