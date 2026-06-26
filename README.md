@@ -5,6 +5,9 @@
 
 `serverplugin_guarddog` is a Source server plugin that detects frozen server execution and triggers a kill sequence when SRCDS stops responding.
 
+<img width="701" height="336" alt="screenshot of countdown" src="https://github.com/user-attachments/assets/a541721d-aa4d-4e51-826a-5e26755be1bc" />
+
+
 **Features:**
 - Monitors `GameFrame` progress from the Source server
 - Starts a timeout countdown when frames are missing
