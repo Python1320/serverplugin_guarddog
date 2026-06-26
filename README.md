@@ -14,7 +14,7 @@
 
 ## Install gmsv_segfault
 
-You need gmsv_segfault to utilize this watchdog properly. 
+You need **[gmsv_segfault](https://github.com/Python1320/gmsv_segfault)** to utilize this watchdog properly. 
 - `guarddog` watches for server freezes and generates failure signals
 - `gmsv_segfault` is a companion crash-handling module that catches signals like `SIGUSR1`/`SIGUSR2` and writes diagnostics or backtraces
 - Used together, `guarddog` can detect hangs and `gmsv_segfault` can capture useful crash/debug output before the process exits and recover from some infinite loops in Lua.
